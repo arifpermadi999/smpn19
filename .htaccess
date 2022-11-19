@@ -1,0 +1,15 @@
+RewriteEngine on
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php?/$0 [PT,L]
+
+php_value date.timezone 'Asia/Jakarta'
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^smpn19kotabekasi\.sch\.id$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.smpn19kotabekasi\.sch\.id$
+RewriteRule ^/?$ "https\:\/\/smpn19kotabekasi\.sch\.id\/" [R=301,L]
+

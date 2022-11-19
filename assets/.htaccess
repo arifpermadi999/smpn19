@@ -1,0 +1,2 @@
+AuthName "assets"
+AuthUserFile "/home/smanege4/.htpasswds/public_html/assets/passwd"
